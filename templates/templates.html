@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Basic Page Needs
+    ================================================== -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Skin Cancer Classification Using Deep Convolutional Neural Network</title>
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+
+    <!-- Mobile Specific Metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- Favicon
+    ================================================== -->
+    <link rel="apple-touch-icon" sizes="180x180" href="static/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/img/favicon.png">
+
+    <!-- Stylesheets
+    ================================================== -->
+    <!-- Bootstrap core CSS -->
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="static/css/style.css" rel="stylesheet">
+    <link href="static/css/responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<style>
+h2 {
+  text-shadow: 2px 2px 5px  white;
+}
+</style>
+<body>
+
+    <header id="masthead" class="site-header">
+        <nav id="primary-navigation" class="site-navigation">
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="site-title" style="font-size:35px;"><span>SLIN CANCER</span></a>
+
+                </div><!-- /.navbar-header -->
+
+                <div class="collapse navbar-collapse" id="agency-navbar-collapse">
+
+                    <ul class="nav navbar-nav navbar-right">
+
+                      <li class="active"><b><a href="/" style="font-size:20px;">Logout</a></b></li>
+
+                        </li>
+<!--                        <li><a href="/about">About</a></li>-->
+<!--                        <li><a href="/Register">Register</a></li>-->
+<!--                        <li><a href="/login">Login</a></li>-->
+
+<!--                        &lt;!&ndash;                        <li><a href="ui-elements.html">UI Elements</a></li>&ndash;&gt;-->
+
+<!--                    </ul>-->
+
+                    </ul></div>
+
+            </div>
+        </nav><!-- /.site-navigation -->
+    </header><!-- /#mastheaed -->
+
+
+    <div class="bg" style="background-image: url(static/img/s-3.jpg); height: 100vh;">
+        <!--    <div><img class="bg" src="static/img/dl-11.jpg" style="width:100%;"></div>-->
+<form action="{{url_for('upload')}}" method="POST" enctype="multipart/form-data">
+        <!--        <div class="carousel-content">-->
+
+        <center>
+            <!--        <div class="carousel-content">-->
+            <div class="container mt-5">
+                <div class="slide" id="Result">
+                    <div class="content fourth-content">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="form-group">
+                                        <img src=" {{url_for('send_image', filename=image_name)}}"style="width:530px;height:300px; margin-left: 250px;margin-top:100px;"><br>
+
+
+                                        <h2 style="color:red; width:380px;margin-left: 250px;margin-top:100px;">{{ text }} {{ a }}</h2>
+                                        <centre style="width:360px;"> <a style="text-decoration: none; display: block; margin: 20px auto;margin-top:600px;" class="btn btn-primary btn-block btn-large" href="{{url_for('upload')}}" role="button">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Predict Another image</a>
+                                        </centre>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </center>
+    </form>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/bootstrap-select.min.js"></script>
+    <script src="static/js/jquery.slicknav.min.js"></script>
+    <script src="static/js/jquery.countTo.min.js"></script>
+    <script src="static/js/jquery.shuffle.min.js"></script>
+    <script src="static/js/script.js"></script>
+
+</body>
+</html>

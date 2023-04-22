@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Basic Page Needs
+    ================================================== -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Skin Cancer Classification Using Deep Convolutional Neural Network</title>
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+
+    <!-- Mobile Specific Metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- Favicon
+    ================================================== -->
+    <link rel="apple-touch-icon" sizes="180x180" href="static/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/img/favicon.png">
+
+    <!-- Stylesheets
+    ================================================== -->
+    <!-- Bootstrap core CSS -->
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="static/css/style.css" rel="stylesheet">
+    <link href="static/css/responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.bg {
+  /* The image used */
+  background-image: url("img_girl.jpg");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+</style>
+<style>
+h1 {
+  text-shadow: 2px 2px 5px white;
+}
+</style>
+<body>
+
+<header id="masthead" class="site-header">
+    <nav id="primary-navigation" class="site-navigation">
+        <div class="container">
+
+            <div class="navbar-header">
+
+              <h1> <a class="site-title" style="font-size:35px;"><span>SKIN CANCER</span></a></h1>
+
+            </div><!-- /.navbar-header -->
+
+            <div class="collapse navbar-collapse" id="agency-navbar-collapse">
+
+                <ul class="nav navbar-nav navbar-right">
+
+
+                    <li class="nav-item active"><b><a href="/loginhomepage" class="nav-link" style="font-size:20px;">Home</a></b></li>
+
+
+                    </li>
+                    <li><strong><a href="/upload" style="font-size:20px;">Upload</a></strong></li>
+                    <li class="nav-item cta"><strong><a href="/" class="nav-link"  style="font-size:20px;">logout</a></strong></li>
+
+
+
+                    <!--                        <li><a href="ui-elements.html">UI Elements</a></li>-->
+
+                </ul>
+
+            </div>
+
+        </div>
+    </nav><!-- /.site-navigation -->
+</header><!-- /#mastheaed -->
+
+
+<form action="{{url_for('upload')}}" method="POST" enctype="multipart/form-data">
+            <div class="carousel-content">
+    <div class="bg" style="background-image: url(static/img/s-14.jpg); height: 100vh; ">
+        <center>
+
+            <label for="img" style="color:hsl(9, 100%, 64%); margin-top: 100px; margin-bottom: 100px;"><h2><u>Choose Image:</u></h2></label>
+
+            <input type="file" id="img" name="file" style="margin-left: 150px;padding-left: 68px;"><br><br>
+
+            <center><h1 style="color:blue;">{{msg}}</h1></center><br>
+
+    <div>
+        <select name="alg" class="form-select" aria-label="Default select example" >
+          <option selected>SELECT</option>
+          <option value="1">DenseNet201</option>
+          <option value="2">ResNet101</option>
+          <option value="3">vgg16</option>
+            <option value="4">MobileNetV2</option>
+            <option value="5">DCNN</option>
+            <option value="6">AlexNet</option>
+        </select>
+</div><br><br><br>
+
+            <input type="submit" value="Submit" >
+
+
+        </center>
+<!--    </div>-->
+</form>
+</div>
+</div>
+
+<!--<section class="overlay-menu">-->
+<!--    <div class="container">-->
+<!--        <div class="row">-->
+<!--            <div class="main-menu">-->
+<!--                <ul>-->
+<!--                    <li>-->
+<!--                        <a href="/">Home</a>-->
+<!--                    </li>-->
+<!--                    <li>-->
+<!--                        <a href="/about">About Us</a>-->
+<!--                    </li>-->
+<!--                    <li>-->
+<!--                        <a href="/upload">Upload image</a>-->
+<!--                    </li>-->
+
+
+<!--                </ul>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
+
+
+
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="static/js/bootstrap.min.js"></script>
+<script src="static/js/bootstrap-select.min.js"></script>
+<script src="static/js/jquery.slicknav.min.js"></script>
+<script src="static/js/jquery.countTo.min.js"></script>
+<script src="static/js/jquery.shuffle.min.js"></script>
+<script src="static/js/script.js"></script>
+
+</body>
+</html>
+
+
+
+
