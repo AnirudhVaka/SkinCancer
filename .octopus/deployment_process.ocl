@@ -1,0 +1,32 @@
+step "sql-deploy-dacpac-using-sqlpackage" {
+    name = "SQL - Deploy DACPAC using SqlPackage"
+    properties = {
+        Octopus.Action.TargetRoles = "qSWDFG"
+    }
+
+    action {
+        properties = {
+            DACPACDeploy = "True"
+            DACPACPackage = "{\"PackageId\":\"68415561FDVFD\",\"FeedId\":\"octopus-server-built-in\"}"
+            DACPACPackageName = "WDE"
+            DACPACPublishProfile = "QWD"
+            DACPACReport = "True"
+            DACPACScript = "True"
+            Octopus.Action.RunOnServer = "false"
+            Octopus.Action.Template.Id = "ActionTemplates-1"
+            Octopus.Action.Template.Version = "6"
+        }
+        worker_pool_variable = ""
+
+        packages "DACPACPackage" {
+            acquisition_location = "Server"
+            feed = "octopus-server-built-in"
+            package_id = "68415561FDVFD"
+            properties = {
+                Extract = "True"
+                PackageParameterName = "DACPACPackage"
+                SelectionMode = "deferred"
+            }
+        }
+    }
+}
